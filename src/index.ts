@@ -1,5 +1,10 @@
 import { handleRequest } from './handler'
 
+interface IEvent extends Event {
+  respondWith: (K: Promise<Response>) => Promise<Response>
+  request: Request
+}
+
 addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
+  ;(event as IEvent).respondWith(handleRequest((event as IEvent).request))
 })
