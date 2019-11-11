@@ -3,6 +3,7 @@
     "outDir": "../transpiled",
     "target": "esnext",
     "module": "commonjs",
+    "strict": true,
     "sourceMap": true,
     "experimentalDecorators": true,
     "lib": ["esnext", "webworker"]
